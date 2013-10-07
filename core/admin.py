@@ -8,4 +8,7 @@ class PhotoInlineModelAdmin(AdminImageMixin, admin.TabularInline):
 
 
 class ChessBoardAdmin(AdminImageMixin, admin.ModelAdmin):
+    list_display = ("name", "description")
     inlines = [PhotoInlineModelAdmin]
+
+admin.site.register(Chessboard, ChessBoardAdmin)

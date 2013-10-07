@@ -53,8 +53,6 @@ TIME_ZONE = 'America/New_York'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
 
-SITE_ID = 1
-
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
@@ -132,13 +130,11 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
-    'pagination.middleware.PaginationMiddleware',
     'core.middleware.XForwardedForMiddleware',
 )
 
-ROOT_URLCONF = 'photogrid.urls'
+ROOT_URLCONF = 'photogrid.photogrid.urls'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_DIR, 'templates'),
@@ -151,15 +147,10 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.flatpages',
     'django.contrib.formtools',
-    'django.contrib.gis',
     'django.contrib.humanize',
     'django.contrib.messages',
-    'django.contrib.redirects',
     'django.contrib.sessions',
-    'django.contrib.sitemaps',
-    'django.contrib.sites',
     'django.contrib.staticfiles',
     'django.contrib.webdesign',
     # 3rd Party apps
