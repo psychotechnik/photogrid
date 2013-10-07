@@ -1,4 +1,5 @@
 import os.path
+from django.template.defaultfilters import slugify
 
 from django.db import models
 from sorl.thumbnail import ImageField
@@ -12,7 +13,7 @@ class Chessboard(models.Model):
 class Photo(models.Model):
 
     def determine_path(instance, filename):
-        return os.path.join('uploads', 'chessboards', str(instance.id), filename)
+        return os.path.join('uploads', 'chessboards', slugify(instance.title), filename)
 
     chessboard = models.ForeignKey("core.Chessboard")
     title = models.CharField(max_length=200)
