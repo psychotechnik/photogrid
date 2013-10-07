@@ -1,0 +1,36 @@
+<uwsgi>
+    <wsgi-file>/var/local/venv/photogrid/bin/django.wsgi</wsgi-file>
+    <uid>www-data</uid>
+    <home>/var/local/venv/photogrid</home>
+    <harakiri>60</harakiri>
+    <daemonize>/var/local/venv/photogrid/log/uwsgi.log</daemonize>
+    <master/>
+    <vacuum/>
+    <no-orphans/>
+    <show-config/>
+    <pidfile>/var/local/venv/photogrid/var/run/uwsgi.pid</pidfile>
+    <single-interpreter/>
+    <pythonpath>/var/local/venv/photogrid/photogrid</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/python_memcached-1.53-py2.7.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/django_grappelli-2.4.6-py2.7.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/python_memcached-1.53-py2.7.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/sorl_thumbnail-11.12-py2.7.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/South-0.8.2-py2.7.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/psycopg2-2.4.6-py2.7-linux-i686.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/PIL-1.1.7-py2.7-linux-i686.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/uWSGI-1.9.17.1-py2.7.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/django_twitter_bootstrap-2.3.2-py2.7.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/ipdb-0.8-py2.7.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/ipython-1.1.0-py2.7.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/django_extensions-1.2.2-py2.7.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/django_debug_toolbar-0.9.4-py2.7.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/django_haystack_panel-0.1.3-py2.7.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/djangorecipe-1.5-py2.7.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/Django-1.5.4-py2.7.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/zc.recipe.egg-2.0.1-py2.7.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/zc.buildout-2.2.1-py2.7.egg</pythonpath>
+    <pythonpath>/var/local/buildout/eggs/six-1.4.1-py2.7.egg</pythonpath>
+    <pythonpath>/var/local/venv/photogrid/lib/python2.7/site-packages</pythonpath>
+    <pythonpath>/var/local/venv/photogrid</pythonpath>
+    <pythonpath>/var/local/venv/photogrid/photogrid</pythonpath>
+</uwsgi>
