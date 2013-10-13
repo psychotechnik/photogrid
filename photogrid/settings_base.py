@@ -98,7 +98,9 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'compressor.finders.CompressorFinder',
+    'less.finders.LessFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -147,19 +149,22 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.formtools',
-    'django.contrib.humanize',
-    'django.contrib.messages',
+    #'django.contrib.formtools',
+    #'django.contrib.humanize',
+    #'django.contrib.messages',
     'django.contrib.sessions',
     'django.contrib.staticfiles',
-    'django.contrib.webdesign',
+    #'django.contrib.webdesign',
     # 3rd Party apps
     'django_extensions',
     'twitter_bootstrap',
+    'less',
+    'compressor',
     'sorl.thumbnail',
     # Project specific apps
     "core",
     # south must come last
+
     'south',
 )
 
@@ -227,6 +232,11 @@ LOGGING = {
 }
 
 FIXTURE_DIRS = ("fixtures",)
+
+COMPRESS_OFFLINE = True
+COMPRESS_STORAGE = 'compressor.storage.CompressorFileStorage'
+COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter', 'compressor.filters.cssmin.CSSMinFilter']
+COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.JSMinFilter',]
 
 THUMBNAIL_DUMMY = False
 THUMBNAIL_DEBUG = True

@@ -39,16 +39,8 @@ DEBUG_TOOLBAR_PANELS = (
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS' : False,
 }
-INSTALLED_APPS += ('debug_toolbar', 'haystack_panel')
-MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
-
-if 'uwsgi_admin' in INSTALLED_APPS:
-    TEMPLATE_DIRS += (os.path.join(PARENT_DIR, 'uwsgi_utils/uwsgi_admin/templates'), )
-    DEBUG_TOOLBAR_PANELS += ('uwsgi_admin.panels.uWSGIDebugPanel',)
-
-
-# Uncomment the following to enable devserver, see default settings below
-# INSTALLED_APPS += ('devserver',)
+#INSTALLED_APPS += ('debug_toolbar', )
+#MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
 
 #CACHES = {
 #    'default': {
