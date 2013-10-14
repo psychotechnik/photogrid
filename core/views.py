@@ -17,9 +17,9 @@ class IndexView(TemplateView):
         board = Chessboard.objects.all()[0]
         context_data['chessboard'] = board
         grid = []
-        for row in range(8):
+        for row in range(1, 9):
             row_photos = ""
-            for col in range(8):
+            for col in range(1, 9):
                 try:
                     photo = board.photos.get(row=row, column=col)
                     row_photos += render_to_string('_photo.html', {'photo': photo, })
