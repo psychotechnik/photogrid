@@ -1,54 +1,27 @@
 {% extends "base.html" %}
 
+{% load thumbnail %}
+
 
 {% block container %}
 
 <h1>This is chessgrid</h1>
 <p>what is this.<br> more on what this is...</p>
 
-{% comment %}
-   <div class="tabbable" style="margin-bottom: 18px;">
-      <ul class="nav nav-tabs">
-        <li class=""><a href="#tab1" data-toggle="tab">Section 1</a></li>
-        <li class=""><a href="#tab2" data-toggle="tab">Section 2</a></li>
-        <li class="active"><a href="#tab3" data-toggle="tab">Section 3</a></li>
-      </ul>
-      <div class="tab-content" style="padding-bottom: 9px; border-bottom: 1px solid #ddd;">
-        <div class="tab-pane" id="tab1">
-          <p>I'm in Section 1.</p>
+        <div id="links">
+            {% for photo in chessboard.photos.all %}
+
+            {% thumbnail photo.image "600x600" crop="center" as im %}
+            {% thumbnail photo.image "200x200" crop="center" as im_thumb %}
+            <a href="{{ im.url }}" title="{{ photo.title }}" data-gallery>
+                <img src="{{ im_thumb.url}}" alt="{{ photo.title }}" width="{{ im_thumb.width }}" height="{{ im_thumb.height }}">
+            </a>
+            {% endthumbnail %}
+            {% endthumbnail %}
+
+
+            {% endfor %}
         </div>
-        <div class="tab-pane" id="tab2">
-          <p>Howdy, I'm in Section 2.</p>
-        </div>
-        <div class="tab-pane active" id="tab3">
-            <p>what is this?.</p>
-        </div>
-      </div>
-    </div>
-
-{% endcomment %}
-
- <div id="demoLightbox" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
-	<div class='lightbox-content'>
-		<img src="/media/ne_piem.jpg">
-		<div class="lightbox-caption"><p>Your caption here</p></div>
-	</div>
-</div>
-
-
-        <div class="example">
-		<ul class="thumbnails">
-			<li class="span2">
-				<a data-toggle="lightbox" href="#demoLightbox" class="thumbnail">
-					<img src="/media/ne_piem.jpg" alt="Click to view the lightbox">
-				</a>
-			</li>
-		</ul>
-        </div>
-
-        <!--div>  <a data-toggle="lightbox" href="#demoLightbox">Open Lightbox</a> </div-->
-
-
 
 
 {% endblock container %}

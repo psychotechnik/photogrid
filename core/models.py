@@ -15,7 +15,7 @@ class Photo(models.Model):
     def determine_path(instance, filename):
         return os.path.join('uploads', 'chessboards', slugify(instance.title), filename)
 
-    chessboard = models.ForeignKey("core.Chessboard")
+    chessboard = models.ForeignKey("core.Chessboard", related_name="photos")
     title = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
     image = ImageField(upload_to=determine_path)
