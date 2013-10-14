@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load thumbnail %}
+{% load thumbnail staticfiles %}
 
 
 {% block container %}
@@ -8,20 +8,14 @@
 <h1>This is chessgrid</h1>
 <p>what is this.<br> more on what this is...</p>
 
-        <div id="links">
-            {% for photo in chessboard.photos.all %}
+<div id="links">
 
-            {% thumbnail photo.image "600x600" crop="center" as im %}
-            {% thumbnail photo.image "100x100" crop="center" as im_thumb %}
-            <a href="{{ im.url }}" title="{{ photo.title }}" data-gallery>
-                <img src="{{ im_thumb.url}}" alt="{{ photo.title }}" width="{{ im_thumb.width }}" height="{{ im_thumb.height }}">
-            </a>
-            {% endthumbnail %}
-            {% endthumbnail %}
+    {# for photo in chessboard.photos.all #}
+    {# endfor #}
 
-
-            {% endfor %}
-        </div>
-
+    {% for row in grid %}
+        <div> {{ row|safe }}</div>
+    {% endfor %}
+</div>
 
 {% endblock container %}

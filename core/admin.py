@@ -3,7 +3,7 @@ from .models import Chessboard, Photo
 from sorl.thumbnail.admin import AdminImageMixin
 
 
-class PhotoInlineModelAdmin(AdminImageMixin, admin.TabularInline):
+class PhotoInlineModelAdmin(AdminImageMixin, admin.StackedInline):
     model = Photo
 
 
