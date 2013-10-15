@@ -22,6 +22,9 @@ class Photo(models.Model):
     row = models.IntegerField()
     column = models.IntegerField()
 
+    def full_title(self):
+        return "<br/>".join([self.title, self.description])
+
     def __unicode__(self):
         return "%s [row %s, col %s]" % (self.title, self.row, self.column)
 
